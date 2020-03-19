@@ -17,7 +17,7 @@ def string_to_location(string):
     Letter = mo.group(1)
     Number = mo.group(2)
 
-    location = int(Number) + (ord(Letter)-65)*9 #ord function converts a uncode(ASCII) letter to a nuber
+    location = int(Number) + (ord(Letter)-65)*9 #ord function converts a uncode(ASCII) letter to a number
     return location-1
 
 
