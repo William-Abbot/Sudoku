@@ -1,0 +1,30 @@
+need to make a program that the user can run in the terminal with arguments or not. Then it needs to, initially, display a hello message with directions and the initial sudoku board. Then the user will be able to type in commands to either have it solved by the computer or solve the puzzle themselves by entering in a location and a number to put at that location.
+
+1. create solving algorithm
+	- make it extensible to add solving "modules" to possibly make the computer able to solve faster
+	- going to try an add these methods:
+		1. “FORCED” CELL
+		2. “ONLY” CELL
+		3. SIMPLIFYING THE RANGE OF POSSIBILITIES
+		4. BACKTRACKING (trial and error)
+2. test that
+3. decide what data structures to use in main.py
+4. build main.py
+
+
+
+
+
+BACKTRACKING:
+
+place the number 1 in the first empty cell
+if chioce is valid:
+	continue to next empty cell
+else:
+	increment the number in the current cell
+	if it reaches a 9 and that is also invalid:
+		the program backtracks to the last candidate cell (a cell that used to be empty) and increments that cell to the first valid number and continues.
+
+-This Algorithm can be improved with constraint propagation: after each new number is placed, the program generates a table of the remaining possible numbers in each empty cell and considers only numbers from this table.
+
+
