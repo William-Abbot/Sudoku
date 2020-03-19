@@ -8,7 +8,7 @@ def delimenate(string):
 		templist.append(int(i))
 	return templist
 
-fileIn = open(r'E:\Documents\Programming\projects\Sudoku\sample boards.txt', "a")
+fileIn = open(r'..\sample boards.txt', "a")
 
 fileIn.write("\n" + str(delimenate(string)) + "\n")
 
