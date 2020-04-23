@@ -15,6 +15,7 @@ def isValid(digits_list, location, candidate):
     digits = digits_list #list of all digits in board, has size of 81
     number = stl.getNumber(l_string) #location number
     letter = stl.getLetter(l_string) #location letter
+    candidate = int(candidate) #ensure integerness
     
     current_block = getBlock(digits, number, letter)
     current_row = getRow(digits, number, letter)
