@@ -58,8 +58,8 @@ def getRow(digits, number, letter):
         row[i-1] = digits[index]
     return row
 
-#returns the values of all squares (cells) in the same column
-#   as the letter input, as a list
+#returns the values of all squares (cells) in the same column as
+#   the letter input, as a list
 def getColumn(digits, number, letter):
     column = [0]*9
     letter_num = (ord(letter)-65)

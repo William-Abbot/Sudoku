@@ -6,7 +6,7 @@ need to make a program that the user can run in the terminal with arguments or n
 		1. “FORCED” CELL
 		2. “ONLY” CELL
 		3. SIMPLIFYING THE RANGE OF POSSIBILITIES
-		4. BACKTRACKING (trial and error)
+		4. BACKTRACKING WITH DEPTH-FIRST-SEARCH(trial and error)
 2. test that
 3. decide what data structures to use in main.py
 4. build main.py
@@ -19,11 +19,12 @@ BACKTRACKING:
 
 place the number 1 in the first empty cell
 if chioce is valid:
+	mark cell as visited
 	continue to next empty cell
 else:
 	increment the number in the current cell
 	if it reaches a 9 and that is also invalid:
-		the program backtracks to the last candidate cell (a cell that used to be empty) and increments that cell to the first valid number and continues.
+		the program backtracks to the last visited cell (a cell that used to be empty) and increments that cell to the first valid number and continues.
 
 -This Algorithm can be improved with constraint propagation: after each new number is placed, the program generates a table of the remaining possible numbers in each empty cell and considers only numbers from this table.
 
