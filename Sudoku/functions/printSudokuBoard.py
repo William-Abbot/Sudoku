@@ -33,15 +33,16 @@ def getRowOfNumbers(list, row):
         #print(str(start+9)+"\n")
         templist[i-start] = list[i]
 
-    #here, the row of digits is converted from a list to a string
+    #here, the row of digits is converted from a list to a string and is
+    #   then formatted
     rowstring = " "
     for i in range(len(templist)):
         filteredString = ""
-        #converting the 0's to .'s
         if (templist[i] == 0):
-            filteredString = "."
+            filteredString = "." #converting the 0's to .'s
         else:
             filteredString = str(templist[i])#convert list to string
+        #format
         rowstring += filteredString + " "
         if((i+1)%3 == 0):
             rowstring += "| "
