@@ -1,14 +1,16 @@
 import re, functions.printSudokuBoard as printsb, functions.updateBoard as upsb
 import functions.isValid as valid
+#import functions.generate as gen
 
 list1 = [5,0,1,0,0,0,0,9,6,0,0,0,0,9,0,0,5,0,0,0,0,0,0,5,2,0,7,4,9,0,1,0,0,0,7,0,0,0,0,0,0,7,0,0,0,1,3,0,0,0,0,0,2,0,3,0,4,0,5,9,0,0,0,0,2,8,0,7,1,0,4,0,7,6,5,8,2,0,0,0,0]
+list2 = [0]*81
 
 printsb.printBoard(list1)
 print("\nHello!! Type \'help\' for a list of commands, otherwise, enjoy the game!\n")
 
 
 next_move = ''
-help_commands = {'<new value> <letter><number>': 'puts <new value> in specified cell', 'quit': 'quits game'}
+help_commands = {'<new value> <letter><number>': 'puts <new value> in specified cell', 'quit': 'quits game', 'generate': 'generates a random sudoku board for you'}
 
 
 def delimenate(string):
@@ -26,6 +28,8 @@ while(True):
     if next_move == 'help':
         print(help_commands)
         continue
+    #if next_move == 'generate':
+    #    
     if next_move == 'quit' or next_move == 'exit':
         break
     
@@ -40,7 +44,7 @@ while(True):
     if result:
         printsb.printBoard(upsb.UpdateBoard(list1, command_list[1], command_list[0]))
     else:
-        print("not a valid move\n")
+        print("not a valid move\n")   
 
 
 print("Thanks for playing!\n")
