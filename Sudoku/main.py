@@ -10,7 +10,7 @@ print("\nHello!! Type \'help\' for a list of commands, otherwise, enjoy the game
 
 
 next_move = ''
-help_commands = {'<new value> <letter><number>': 'puts <new value> in specified cell', 'quit': 'quits game', 'generate': 'generates a random sudoku board for you'}
+help_commands = {'<new value> <letter><number>': 'puts <new value> in specified cell', 'quit': 'quits game'} #'generate': 'generates a random sudoku board for you'
 
 
 def delimenate(string):

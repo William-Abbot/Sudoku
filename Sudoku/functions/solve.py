@@ -1,5 +1,5 @@
 #python3!
-#solve.py
+#solve-deapthFirstSearch.py
 #William Abbot
 
 import os, sys
@@ -8,4 +8,7 @@ parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
 #Python, please allow implicit references again!!
 
-from solving import depthFirstSearch
+from solving import solve-depthFirstSearch as dfs, solve-backtracking as backtrack
+
+
+def solve():
