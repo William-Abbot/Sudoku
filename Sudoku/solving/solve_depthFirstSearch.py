@@ -1,5 +1,5 @@
 #python3!
-#depthFirstSearch.py
+#solve_depthFirstSearch.py
 #William Abbot
 
 import os, sys
