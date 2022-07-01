@@ -11,5 +11,5 @@ sys.path.append(parentdir)
 from solving import solve_depthFirstSearch as dfs, solve_backtracking as backtrack
 
 
-def solve():
-    return None
+def solve(grid, print):
+    return backtrack.solve(grid, print)
