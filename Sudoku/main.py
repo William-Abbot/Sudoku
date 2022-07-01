@@ -1,16 +1,16 @@
 import re, functions.printSudokuBoard as printsb, functions.updateBoard as upsb
 import functions.isValid as valid, functions.solve as solve
-#import functions.generate as gen
+import functions.generate as gen
 
-list1 = [5,0,1,0,0,0,0,9,6,0,0,0,0,9,0,0,5,0,0,0,0,0,0,5,2,0,7,4,9,0,1,0,0,0,7,0,0,0,0,0,0,7,0,0,0,1,3,0,0,0,0,0,2,0,3,0,4,0,5,9,0,0,0,0,2,8,0,7,1,0,4,0,7,6,5,8,2,0,0,0,0]
+#board = [5,0,1,0,0,0,0,9,6,0,0,0,0,9,0,0,5,0,0,0,0,0,0,5,2,0,7,4,9,0,1,0,0,0,7,0,0,0,0,0,0,7,0,0,0,1,3,0,0,0,0,0,2,0,3,0,4,0,5,9,0,0,0,0,2,8,0,7,1,0,4,0,7,6,5,8,2,0,0,0,0]
 board = [0]*81
 
-printsb.printBoard(list1)
+printsb.printBoard(board)
 print("\nHello!! Type \'help\' for a list of commands, otherwise, enjoy the game!\n")
 
 
 next_move = ''
-help_commands = {'<new value> <letter><number>': 'puts <new value> in specified cell', 'solve': 'solves current grid', 'quit': 'quits game'} #'generate': 'generates a random sudoku board for you'
+help_commands = "\"<new value> <letter><number>\": puts <new value> into specified cell\n\"solve\": solves current grid\n\"quit\": quits game\n\"generate\": generates a random sudoku board for you\n"
 
 
 def delimenate(string):
@@ -30,11 +30,17 @@ while(True):
         continue
     
     if next_move == 'solve':
-        solve.solve(list1, False)
+        if all(x == 0 for x in board):
+            print("\nThis Board is empty, try to insert some values\n")
+        else:
+            solve.solve(board, True)
+            printsb.printBoard(board)
         continue
 
-    #if next_move == 'generate':
-    #
+    if next_move == 'generate':
+        board = gen.generateBoard(50)
+        printsb.printBoard(board)
+        continue
         
     if next_move == 'quit' or next_move == 'exit':
         break
@@ -42,13 +48,13 @@ while(True):
     command_list = re.split(r'\s',next_move)
     
     try:
-        result = valid.isValid(list1, command_list[1], command_list[0])
+        result = valid.isValid(board, command_list[1], command_list[0])
     except IndexError:
         print("invalid command\n")
         continue
     
     if result:
-        printsb.printBoard(upsb.UpdateBoard(list1, command_list[1], command_list[0]))
+        printsb.printBoard(upsb.UpdateBoard(board, command_list[1], command_list[0]))
     else:
         print("not a valid move\n")   
 

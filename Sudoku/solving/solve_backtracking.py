@@ -23,6 +23,7 @@ def staticCells(grid):
     return lst
 
 def solve(grid, print):
+    originalGrid = grid
     static_cells = staticCells(grid)
     num = 1
     letter = 0
@@ -34,7 +35,9 @@ def solve(grid, print):
             if not isValid(grid,(chr(letter+65)+str(num)),test_val):
                 add = True
                 if test_val== 9:
-                    #if c = 80, then puzzle is not solvable (return/throw error?)
+                    if c == 80:
+                        grid = originalGrid
+                        return False
                     add = True
                     grid[c] = 0
                     c -= 1
@@ -76,5 +79,4 @@ def solve(grid, print):
             sys.stdout.write('\r')
             os.system('cls')
             sys.stdout.flush()
-    
-    psb.printBoard(grid)
+    return True
