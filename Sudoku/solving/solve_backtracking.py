@@ -34,6 +34,7 @@ def solve(grid, print):
             if not isValid(grid,(chr(letter+65)+str(num)),test_val):
                 add = True
                 if test_val== 9:
+                    #if c = 80, then puzzle is not solvable (return/throw error?)
                     add = True
                     grid[c] = 0
                     c -= 1
