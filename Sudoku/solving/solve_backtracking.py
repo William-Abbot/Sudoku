@@ -76,7 +76,6 @@ def solve(grid, print):
         if print:
             psb.printBoard(grid)
             #print(c, num, letter, test_val)
-            sys.stdout.write('\r')
             os.system('cls')
-            sys.stdout.flush()
+            #sys.stdout.flush()
     return True
